@@ -29,16 +29,17 @@ export default function ProgressBar({ id, seconds, isChecked, selectProgressBar,
     }, [isChecked, animateCounter]);
 
     const onStart = () => {
-        setStartClicked(true);
-        setStopClicked(false);
+        setStartClicked(true)
+        setStopClicked(false)
         const widthPerSecond = PROGRESS_BAR_WIDTH / seconds;
         setProgressInterval(setInterval(() => {
             setWidth((width) => {
                 if (width < PROGRESS_BAR_WIDTH) {
-                    return (width + widthPerSecond);
+                    return width + widthPerSecond;
                 } else {
                     clearInterval(progressInterval);
-                    return PROGRESS_BAR_WIDTH;
+                    // setWidth(0);
+                    return (PROGRESS_BAR_WIDTH);
                 }
             });
         }, 1000));
@@ -69,7 +70,7 @@ export default function ProgressBar({ id, seconds, isChecked, selectProgressBar,
                     <div style={{ width: width, background: "#005cc8", height: 15, borderRadius: '0.5em' }}></div>
                 </div>
 
-                <AiFillPlayCircle color={isStartClicked ? '#005cc8' : null} onClick={() => onRestart()}/>
+                <AiFillPlayCircle color={isStartClicked ? '#005cc8' : null} onClick={() => onStart()}/>
                 <AiFillPauseCircle color={isStopClicked ? '#005cc8' : null} onClick={() => onStop()}/>
                 <AiOutlineReload onClick={() => onRestart()} />
                 <span className='seconds'> {seconds} seconds </span>
