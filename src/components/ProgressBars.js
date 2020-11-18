@@ -46,12 +46,14 @@ export default function ProgressBars() {
         setAnimateCounter((animateCounter) => {
            return animateCounter + 1
         })
-        if (progressBarList.length > 0) {
+        if (progressBarList.length > 0 && animateCheckedProgressBars.length > 0) {
             const data =   progressBarList.map(x => {
                 const isChecked = (animateCheckedProgressBars.find(id => id === x.id)) ? true : false;
                 return { ...x, isChecked }
             });
             setProgressBarList(data);
+        } else {
+            alert("Please select atleast one progress bar to animate");
         }
     }
 
