@@ -1,0 +1,30 @@
+.input-field{
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: none;
+}
+.add-btn{
+    background: #005cc8;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    color: white;
+    border: none;
+    outline: none;
+    margin: 0 0.5em 0 0.5em;
+}
+.main{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.flex{
+    display: flex;
+}
+.seconds{
+    margin-left: 0.5em;
+    font-size: 14px;
+}
+.mt-half{
+    margin-top: 0.5em;
+}
